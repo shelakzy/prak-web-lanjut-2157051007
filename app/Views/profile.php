@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?=base_url("assets/css/style.css")?>">
+    <img src="<?=base_url("assets/img/card.jpg")?>"alt="" width="200px">
     <title>Profile</title>
     <style>
         body {
@@ -63,13 +65,13 @@
             <i class="fas fa-user"></i> <!-- Gunakan ikon profil Font Awesome di sini -->
         </div>
         <div class="profile-info">
-            <span>Nama:</span> <?= $nama ?>
+            <?= $nama ?>
         </div>
         <div class="profile-info">
-            <span>Kelas:</span> <?= $kelas ?>
+            <?= $npm ?>
         </div>
         <div class="profile-info">
-            <span>NPM:</span> <?= $npm ?>
+            <?= $kelas ?>
         </div>
     </div>
 </body>
