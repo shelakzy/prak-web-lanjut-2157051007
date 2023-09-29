@@ -30,13 +30,27 @@
         <form action="<?=base_url('/user/store') ?>" method="POST">
         <div class="app-form">
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="NAME" name="nama">
+              <input class="form-control <?= ($validation->hasError('nama')) ? 
+              'is-invalid' : ''; ?>" placeholder="NAME" name="nama" value="<?= old('nama'); ?>">
+            <div class="invalid-feedback">
+              The Name Field is Required!
+              </div>
             </div>
             <div class="app-form-group">
               <input class="app-form-control" placeholder="NPM" name="npm">
             </div>
             <div class="app-form-group">
               <input class="app-form-control" placeholder="KELAS" name="kelas">
+              <select name="kelas" id="kelas">
+                  <?php foreach ($kelas as $item){
+                    ?>
+                    <option value="<?= $item['id'] ?>">
+                    <?= $item['nama_kelas'] ?>
+                    </option>
+                  <?php
+                }
+                ?>
+                </select>    
             </div>
             <div class="app-form-group buttons">
               <button class="app-form-button">SEND</button>
