@@ -8,7 +8,7 @@
     <title>Profile</title>
     <style>
         body {
-            background-color: #f7f7f7; /* Warna latar belakang */
+            background-color: #F2385A; /* Warna latar belakang */
             font-family: Arial, sans-serif;
         }
 
