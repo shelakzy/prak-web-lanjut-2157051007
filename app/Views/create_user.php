@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="stylesheet" href="<?=base_url("assets/css/style.css")?>">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
+<?= $this->extend('layouts/app') ?>
+<?= $this->section('content') ?>
 <div class="background">
   <div class="container">
     <div class="screen">
@@ -75,4 +70,4 @@
     </div>
   </div>
 </div>
-</html>
+<?= $this->endSection() ?>
