@@ -22,13 +22,18 @@
           </div>
         </div>
         <div class="screen-body-item">
-        <form action="<?=base_url('/user/store') ?>" method="POST">
+        <form action="<?=base_url('/user/store') ?>" method="POST" enctype="multipart/form-data">
+      <p style="color:#ed1c6f;">Upload Foto</p>
         <div class="app-form">
             <div class="app-form-group">
+            <input type='file' name='foto' />
+              <div>
+               <p></p>
+              </div>
               <input class="form-control <?= ($validation->hasError('nama')) ? 
               'is-invalid' : ''; ?>" placeholder="NAME" name="nama" value="<?= old('nama'); ?>">
             <div class="invalid-feedback">
-              The Name Field is Required!
+              <p style="color:#999;">The Name Field is Required!</p>
               </div>
             </div>
             <div class="app-form-group">
