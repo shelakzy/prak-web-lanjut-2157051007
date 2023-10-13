@@ -7,6 +7,7 @@
 <hr align=”center” size=“4” noshade> </hr> <!–Ini garis horizontal–>
     <link rel="stylesheet" href="<?=base_url("assets/css/stylelist.css")?>">
     <thead>
+    <a href="<?= base_url('/user/create') ?>">Tambah Data</a>
         <tr>
             <th>ID</th>
             <th>NAMA</th>
@@ -25,11 +26,10 @@
             <td><?= $user['npm'] ?></td>
             <td><?= $user['nama_kelas'] ?></td>
             <td>
-            <a href="#">Detail</a>
-            <a href="#">Edit</a>
-            <a href="#">Hapus</a>
-            </td>
-            
+            <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
+            <button type="button">Edit</button>
+            <button type="button">Delete</button>
+            </td>  
         </tr>
         <?php
         }
