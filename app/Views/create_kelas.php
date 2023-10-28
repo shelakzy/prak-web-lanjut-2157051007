@@ -22,41 +22,16 @@
           </div>
         </div>
         <div class="screen-body-item">
-        <form action="<?=base_url('/user/store') ?>" method="POST" enctype="multipart/form-data">
-      <p style="color:#ed1c6f;">Upload Foto</p>
-        <div class="app-form">
-            <div class="app-form-group">
-            <input class="app-form-control" type='file' name='foto' />
-              <div>
-               <p></p>
-              </div>
-              <input class="app-form-control <?= ($validation->hasError('nama')) ? 
-              'is-invalid' : ''; ?>" placeholder="NAME" name="nama" value="<?= old('nama'); ?>">
-            <div class="invalid-feedback">
-              <p style="color:#999;">The Name Field is Required!</p>
-              </div>
-            </div>
-            <div class="app-form-group">
-              <input class="app-form-control" placeholder="NPM" name="npm">
-            </div>
-            <div class="app-form-group">
-              <label>Kelas</label>
-              <select class="app-form-control" name="kelas" id="kelas">
-                  <?php foreach ($kelas as $item){
-                    ?>
-                    <option value="<?= $item['id'] ?>">
-                    <?= $item['nama_kelas'] ?>
-                    </option>
-                  <?php
-                }
-                ?>
-                </select>    
-            </div>
-            <div class="app-form-group buttons">
-              <button class="app-form-button">SEND</button>
-        </form>
-            </div>
-          </div>
+            <form action="<?=base_url('/kelas/store') ?>" method="POST">
+                <input class="app-form-control mb-5 <?= ($validation->hasError('nama_kelas')) ? 
+                'is-invalid' : ''; ?>" placeholder="NAMA KELAS" name="nama_kelas">
+                <div class="invalid-feedback">
+                    <p style="color:#999;">The Name Field is Required!</p>
+                </div>
+                <div class="app-form-group buttons mb-3">
+                    <button class="app-form-button">SEND</button>
+                </div>
+            </form>
         </div>
       </div>
     </div>

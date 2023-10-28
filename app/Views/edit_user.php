@@ -22,29 +22,31 @@
           </div>
         </div>
         <div class="screen-body-item">
-        <form action="<?=base_url('/user/store') ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?= base_url('user/' . $user['id']) ?>" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
+        <?= csrf_field() ?>
       <p style="color:#ed1c6f;">Upload Foto</p>
         <div class="app-form">
             <div class="app-form-group">
-            <input class="app-form-control" type='file' name='foto' />
+            <input class="app-form-control" type='file' name='foto' id="foto">
+            <img src="<?= $user['foto'] ?? '<default-foto>' ?>" width=100% height="100%" alt="">
               <div>
                <p></p>
               </div>
               <input class="app-form-control <?= ($validation->hasError('nama')) ? 
-              'is-invalid' : ''; ?>" placeholder="NAME" name="nama" value="<?= old('nama'); ?>">
+              'is-invalid' : ''; ?>" placeholder="NAME" name="nama" value="<?= $user['nama'] ?>" id="nama" ?>
             <div class="invalid-feedback">
               <p style="color:#999;">The Name Field is Required!</p>
               </div>
             </div>
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="NPM" name="npm">
+              <input class="app-form-control" placeholder="NPM" name="npm" value="<?= $user['npm'] ?>">
             </div>
             <div class="app-form-group">
-              <label>Kelas</label>
               <select class="app-form-control" name="kelas" id="kelas">
                   <?php foreach ($kelas as $item){
                     ?>
-                    <option value="<?= $item['id'] ?>">
+                    <option value="<?= $item['id'] ?>" <?= $user['id_kelas'] == $item['id'] ? 'selected' : '' ?> >
                     <?= $item['nama_kelas'] ?>
                     </option>
                   <?php
