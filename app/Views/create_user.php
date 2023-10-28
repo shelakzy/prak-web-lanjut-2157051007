@@ -26,11 +26,11 @@
       <p style="color:#ed1c6f;">Upload Foto</p>
         <div class="app-form">
             <div class="app-form-group">
-            <input type='file' name='foto' />
+            <input class="app-form-control" type='file' name='foto' />
               <div>
                <p></p>
               </div>
-              <input class="form-control <?= ($validation->hasError('nama')) ? 
+              <input class="app-form-control <?= ($validation->hasError('nama')) ? 
               'is-invalid' : ''; ?>" placeholder="NAME" name="nama" value="<?= old('nama'); ?>">
             <div class="invalid-feedback">
               <p style="color:#999;">The Name Field is Required!</p>
@@ -40,8 +40,8 @@
               <input class="app-form-control" placeholder="NPM" name="npm">
             </div>
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="KELAS" name="kelas">
-              <select name="kelas" id="kelas">
+              <label>Kelas</label>
+              <select class="app-form-control" name="kelas" id="kelas">
                   <?php foreach ($kelas as $item){
                     ?>
                     <option value="<?= $item['id'] ?>">
